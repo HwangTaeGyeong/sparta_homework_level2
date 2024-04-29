@@ -1,17 +1,23 @@
 
 public class Calculator {
-    public double calculate(int firstNumber, int secondNumber, String symbol) {
+    double result;
+
+    public void setResult(double result) {
+        this.result = result;
+    }
+
+    public double calculate(int firstNumber, int secondNumber, char symbol) {
         switch (symbol) {
-            case "+" -> {
+            case '+' -> {
                 return firstNumber + secondNumber;
             }
-            case "-" -> {
+            case '-' -> {
                 return firstNumber - secondNumber;
             }
-            case "/" -> {
+            case '/' -> {
                 return (double) firstNumber / secondNumber;
             }
-            case "*" -> {
+            case '*' -> {
                 return firstNumber * secondNumber;
             }
             default -> {
