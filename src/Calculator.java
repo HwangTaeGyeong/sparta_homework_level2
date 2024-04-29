@@ -40,7 +40,7 @@ public class Calculator {
     public void inquiryResults() {
         System.out.println(this.arrayList.toString());
     }
-
+  
     public ArrayList<Integer> getArrayList() {
         return arrayList;
     }
