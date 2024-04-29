@@ -1,29 +1,43 @@
+import java.util.ArrayList;
 
 public class Calculator {
-    double result;
+    private ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
-    public void setResult(double result) {
-        this.result = result;
-    }
-
-    public double calculate(int firstNumber, int secondNumber, char symbol) {
+    public ArrayList<Integer> calculate(int firstNumber, int secondNumber, char symbol) {
+        int result;
         switch (symbol) {
             case '+' -> {
-                return firstNumber + secondNumber;
+                result = firstNumber + secondNumber;
+                this.arrayList.add(result);
+                return this.arrayList;
             }
             case '-' -> {
-                return firstNumber - secondNumber;
+                result = firstNumber - secondNumber;
+                this.arrayList.add(result);
+                return this.arrayList;
             }
             case '/' -> {
-                return (double) firstNumber / secondNumber;
+                result = firstNumber / secondNumber;
+                this.arrayList.add(result);
+                return this.arrayList;
             }
             case '*' -> {
-                return firstNumber * secondNumber;
+                result = firstNumber * secondNumber;
+                this.arrayList.add(result);
+                return this.arrayList;
             }
             default -> {
                 System.out.println("옯바른 사칙연산 기호를 선택해주세요.");
-                return 0;
+                return null;
             }
         }
+    }
+
+    public ArrayList<Integer> getArrayList() {
+        return arrayList;
+    }
+
+    public void setArrayList(ArrayList<Integer> arrayList) {
+        this.arrayList = arrayList;
     }
 }

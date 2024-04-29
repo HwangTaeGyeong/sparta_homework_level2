@@ -1,9 +1,10 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AppMain {
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
         Scanner sc = new Scanner(System.in);
+        Calculator calculator = new Calculator();
 
         /* 반복문 시작 */
         while (true) {
@@ -15,9 +16,9 @@ public class AppMain {
             System.out.print("사칙연산 기호를 입력하세요: ");
             char operator = sc.next().charAt(0);
 
-            double result = calculator.calculate(num1, num2, operator);
-            calculator.setResult(result);
-            System.out.println("result = " + result);
+            ArrayList<Integer> arrayList = calculator.calculate(num1, num2, operator);
+            calculator.setArrayList(arrayList);
+            System.out.println(arrayList.toString());
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String comment = sc.next();
