@@ -59,8 +59,7 @@ public class Calculator {
     public void circleInquiryResults() {
         System.out.println(this.circleArea.toString());
     }
-
-    /* 사칙연산 필드 Getter, Setter */
+  
     public ArrayList<Integer> getArrayList() {
         return arrayList;
     }
