@@ -27,9 +27,9 @@ public class AppMain {
         }
         /* 반복문 종료 */
 
-        //test removeResult()
-        System.out.println(calculator.getArrayList().toString());
+        //test inquiryResults
+        calculator.inquiryResults();
         calculator.removeResult();
-        System.out.println(calculator.getArrayList().toString());
+        calculator.inquiryResults();
     }
 }
