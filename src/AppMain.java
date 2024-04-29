@@ -18,7 +18,6 @@ public class AppMain {
 
             ArrayList<Integer> arrayList = calculator.calculate(num1, num2, operator);
             calculator.setArrayList(arrayList);
-            System.out.println(arrayList.toString());
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             String comment = sc.next();
@@ -27,5 +26,10 @@ public class AppMain {
             }
         }
         /* 반복문 종료 */
+
+        //test removeResult()
+        System.out.println(calculator.getArrayList().toString());
+        calculator.removeResult();
+        System.out.println(calculator.getArrayList().toString());
     }
 }
