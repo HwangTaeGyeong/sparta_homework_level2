@@ -37,6 +37,10 @@ public class Calculator {
         this.arrayList.removeFirst();
     }
 
+    public void inquiryResults() {
+        System.out.println(this.arrayList.toString());
+    }
+
     public ArrayList<Integer> getArrayList() {
         return arrayList;
     }
