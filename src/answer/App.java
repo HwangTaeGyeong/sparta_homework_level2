@@ -1,6 +1,7 @@
 package answer;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class App {
@@ -40,14 +41,15 @@ public class App {
             System.out.println("result = " + result);
             System.out.println("arrayList.toString() = " + calculator.getResults().toString());
 
-            //arrayList 출력
+
+            System.out.println("저장된 결과를 제거하시겠습니까? (remove 입력 시 조회)");
+            if (Objects.equals(sc.next(), "remove")) {
+                calculator.removeResult(0);
+            }
+
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
-            comment = sc.next();
-            if (comment.equals("inquiry")) {
-                for (int i : calculator.getResults()) {
-                    System.out.print(i + " ");
-                }
-                System.out.println();
+            if (Objects.equals(sc.next(), "inquiry")) {
+                calculator.inquiryResults();
             }
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
