@@ -5,7 +5,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    List<Integer> results = new ArrayList<>();
+//    캡슐화 private - 외부에서 직접 호출 x, 간접 접근
+    private List<Integer> results = new ArrayList<>();
+
+//    지금 코드에서 이미 객체를 생성했기 때문에 set은 사용하지 않아도 된다.
+    public List<Integer> getResults() {
+        return results;
+    }
+
+
+    public void setResults(List<Integer> results) {
+        this.results = results;
+    }
+
     public int calculate(int firstNumber, int secondNumber, char symbol) {
         int result = 0;
         switch (symbol) {

@@ -28,23 +28,23 @@ public class App {
                 System.out.println("e.getMessage() = " + e.getMessage());
             }
 
-            //배열의 인덱스가 초과할 때 첫번째 데이터 삭제 후 데이터 앞으로 이동 -> arrayList로 변경
+//           calculator.results 부분이 private로 인해 접근을 못하므로, getResults()사용
             if (count >= 10) {
-                calculator.results.remove(0);
-                calculator.results.add(result);
+                calculator.getResults().remove(0);
+                calculator.getResults().add(result);
             } else {
-                calculator.results.add(result);
+                calculator.getResults().add(result);
                 count++;
             }
 
             System.out.println("result = " + result);
-            System.out.println("arrayList.toString() = " + calculator.results.toString());
+            System.out.println("arrayList.toString() = " + calculator.getResults().toString());
 
             //arrayList 출력
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             comment = sc.next();
             if (comment.equals("inquiry")) {
-                for (int i : calculator.results) {
+                for (int i : calculator.getResults()) {
                     System.out.print(i + " ");
                 }
                 System.out.println();
