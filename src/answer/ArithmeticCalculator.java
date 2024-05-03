@@ -13,12 +13,13 @@ public class ArithmeticCalculator extends Calculator {
     }
 
     private Operator operatorFactory(char operator) {
-        return switch (operator) {
-            case '+' -> new AddOperator();
-            case '-' -> new SubtractOperator();
-            case '/' -> new DivideOperator();
-            case '*' -> new MultiplyOperator();
-            case '%' -> new ModOperator();
+        OperatorType operatorType = OperatorType.fromOperator(operator);
+        return switch (operatorType) {
+            case ADDITION -> new AddOperator();
+            case SUBTRACT -> new SubtractOperator();
+            case DIVISION -> new DivideOperator();
+            case MULTIPLICATION -> new MultiplyOperator();
+            case MODULO -> new ModOperator();
             default -> throw new UnsupportedOperationException("올바른 사칙연산 기호가 아닙니다.");
         };
     }
