@@ -2,24 +2,30 @@ package answer;
 
 import java.util.List;
 
-public class ArithmeticCalculator extends Calculator {
+public class ArithmeticCalculator<T extends Number> extends Calculator {
+    public Class<T> type;
+
+    public ArithmeticCalculator(List<Double> results, Class<T> type) {
+        super(results);
+        this.type = type;
+    }
 
     public ArithmeticCalculator(List<Double> results) {
         super(results);
     }
 
-    public double calculate(int firstNumber, int secondNumber, char symbol) {
+    public T calculate(T firstNumber, T secondNumber, char symbol) {
         return operatorFactory(symbol).operate(firstNumber, secondNumber);
     }
 
-    private Operator operatorFactory(char operator) {
+    private Operator<T> operatorFactory(char operator) {
         OperatorType operatorType = OperatorType.fromOperator(operator);
         return switch (operatorType) {
-            case ADDITION -> new AddOperator();
-            case SUBTRACT -> new SubtractOperator();
-            case DIVISION -> new DivideOperator();
-            case MULTIPLICATION -> new MultiplyOperator();
-            case MODULO -> new ModOperator();
+            case ADDITION -> new AddOperator(type);
+            case SUBTRACT -> new SubtractOperator(type);
+            case DIVISION -> new DivideOperator(type);
+            case MULTIPLICATION -> new MultiplyOperator(type);
+            case MODULO -> new ModOperator(type);
             default -> throw new UnsupportedOperationException("올바른 사칙연산 기호가 아닙니다.");
         };
     }
