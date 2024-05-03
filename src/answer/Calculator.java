@@ -1,25 +1,28 @@
 package answer;
 
 import javax.naming.OperationNotSupportedException;
+import java.util.ArrayList;
+import java.util.List;
 
-ublic class Calculator {
-    public double calculate(int firstNumber, int secondNumber, String symbol) {
-        double result = 0;
+public class Calculator {
+    List<Integer> results = new ArrayList<>();
+    public int calculate(int firstNumber, int secondNumber, char symbol) {
+        int result = 0;
         switch (symbol) {
-            case "+" -> {
+            case '+' -> {
                 result = firstNumber + secondNumber;
             }
-            case "-" -> {
+            case '-' -> {
                 result = firstNumber - secondNumber;
             }
-            case "/" -> {
-                if (secondNumber == 0) {
-                    result = (double) firstNumber / secondNumber;
+            case '/' -> {
+                if (secondNumber != 0) {
+                    result = firstNumber / secondNumber;
                 } else {
                     throw new ArithmeticException("분모에는 0을 입력하실 수 없습니다.");
                 }
             }
-            case "*" -> {
+            case '*' -> {
                 result = firstNumber * secondNumber;
             }
             default -> {
