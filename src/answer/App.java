@@ -44,6 +44,12 @@ public class App {
                 System.out.println("result = " + result);
                 System.out.println("arrayList.toString() = " + arithmeticCalculator.getResults().toString());
 
+                System.out.println("입력값보다 큰 값들을 조회하시겠습니까? (lambda 입력 시 조회)");
+                if (Objects.equals(sc.next(), "lambda")) {
+                    System.out.println("기준 값을 입력하세요: ");
+                    double num = sc.nextDouble();
+                    arithmeticCalculator.printResultGreaterThan(num);
+                }
 
                 System.out.println("저장된 결과를 제거하시겠습니까? (remove 입력 시 조회)");
                 if (Objects.equals(sc.next(), "remove")) {
