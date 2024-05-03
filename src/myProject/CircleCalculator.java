@@ -1,3 +1,7 @@
+package myProject;
+
+import myProject.Calculator;
+
 import java.util.ArrayList;
 
 public class CircleCalculator extends Calculator {

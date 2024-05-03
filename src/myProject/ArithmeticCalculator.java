@@ -1,6 +1,10 @@
+package myProject;
+
+import myProject.Calculator;
+
 import java.util.ArrayList;
 
-public class ArithmeticCalculator extends Calculator{
+public class ArithmeticCalculator extends Calculator {
     private final ArrayList<Integer> arrayList;
 
     public ArithmeticCalculator(ArrayList<Integer> arrayList) {
